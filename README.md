@@ -1,1 +1,0 @@
-# platzi-bbdd-fundamentals
