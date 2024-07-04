@@ -8,6 +8,10 @@
 
 # INDEX
 
+<br>
+<br>
+<br>
+
 # INTRODUCCTION TO RELATIONALS BBDD
   ## [BBDD GOOD PRACTICES WITH SQL]()
 Database normalization is essential to ensure data integrity, organize data properly, and manage relationships between tables.
