@@ -32,6 +32,10 @@ A bad example would be having a student, Marco, with courses listed in a single 
   ### How is the Second Normal Form (2NF) applied?
 The second normal form (**2NF**) requires that all non-key attributes depend on the primary key. To comply with 2NF, you must first satisfy the requirements of 1NF. This involves separating information into additional tables and using foreign keys to establish relationships. For example, creating a separate table for courses and referencing it from the student table using a foreign key.
 
+<p align="center">
+  <img src="https://github.com/juancumbeq/platzi-bbdd-with-sql/blob/main/readme_images/course-table.png?raw=true" width= "75%" alt="course-table">
+</p>
+
   ### What does the Third Normal Form (3NF) entail?
 The third normal form (3NF) adds that all non-key attributes must be independent of each other and comply with the previous two forms. Any redundancy and unnecessary dependency should be eliminated. In this case, an intermediate table between students and courses can help maintain the independence of attributes, relating students and courses through unique identifiers.
 
