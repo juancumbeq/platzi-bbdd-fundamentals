@@ -26,7 +26,7 @@ The first normal form (**1NF**) is based on three fundamental steps:
 A bad example would be having a student, Marco, with courses listed in a single column. The correct solution is to create an individual record for each course and student, ensuring that each course is properly referenced.
 
 <p align="center">
-  <img src="https://github.com/juancumbeq/platzi-responsive-design-mobile-first/blob/main/readme_images/scroll-final-render.webp?raw=true" width= "75%" alt="Scroll render">
+  <img src="https://github.com/juancumbeq/platzi-bbdd-with-sql/blob/main/readme_images/raw.png?raw=true" width= "75%" alt="raw">
 </p>
 
   ### How is the Second Normal Form (2NF) applied?
