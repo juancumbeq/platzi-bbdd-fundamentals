@@ -243,21 +243,42 @@ SELECT * FROM student_course_relation;
 <br>
 
   ##  [``SELECT`` DATA]()
+The ``SELECT * FROM`` command is a fundamental tool in SQL that allows for easy and quick data querying. This statement is used to retrieve all the information from a specific table in the database.
+
+  ### How does the SELECT * FROM command work?
+The ``SELECT`` command is the reserved word that initiates the query. The asterisk (``*``) indicates that you want to select all columns from the specified table. The word ``FROM`` is used to reference the source table of the query. For example, if we execute ``SELECT * FROM courses``, we will get all the rows and columns from the courses table.
+
+  ### How to specify columns instead of selecting all?
+If we only want to query specific columns, we replace the asterisk with the column names. For example, ``SELECT name, description FROM courses`` will only return the name and description columns from the courses table.
+
+  ### How to order the query results?
+We can order the results using the ``ORDER BY`` clause. This allows us to specify whether we want the data to be sorted in ascending (default) or descending order. For example, ``SELECT * FROM courses ORDER BY load_date DESC`` will sort the results by the load_date column in descending order.
+
+  ### How to handle common errors in queries?
+It is normal to encounter syntax errors when writing SQL queries. For example, if we try to execute ``SELECT email, first_name FROM instructors ORDER BY load_date``, and load_date is not the correct column name, we will get an error. Ensuring the exact column names are used, which can be case-sensitive in some database engines, is crucial to avoid these errors.
+
+  ### What additional considerations should we have?
+It's important to remember that some database management systems are case-sensitive. This means that column names must exactly match how they were defined in the database. Practicing with different tables and exercises can help you become more familiar with these tools and improve your ability to perform efficient queries.
 
 <br>
 <br>
 
   ##  [PRACTICE: ``SELECT`` IN SQL]()
+```
+SELECT * FROM cursos;
+SELECT COUNT(*) AS cantidad FROM cursos;
+SELECT nombre AS name, profe AS teacher, n_calificaciones AS n_reviews FROM cursos;
+```
 
 <br>
 <br>
 
-  ##  [``UPDATE``DATA]()
+  ##  [``UPDATE`` DATA]()
 
 <br>
 <br>
 
-  ##  [``DELETE``DATA]()
+  ##  [``DELETE`` DATA]()
 
 <br>
 <br>
