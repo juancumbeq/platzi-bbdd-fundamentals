@@ -116,46 +116,99 @@ Analyzing and choosing the correct data type is vital to avoid extensive data cl
 <br>
 
   ##  [HOW TO CREATE A DATABASE?]()
-Creating a database and designing related tables is fundamental for a data engineer. It is crucial to follow best practices to ensure efficiency and performance.
+  ### What are the best practices for creating relational databases?
+  - **Normalization**: Apply the three normalization rules to avoid redundancies.
+  - **Keys**: Understand primary keys, foreign keys, business keys, and surrogate keys.
+  - **Data types**: Correctly identify the data types for each attribute.
 
-What are the best practices for creating relational databases?
-
-Normalization: Apply the three normalization rules to avoid redundancies.
-Keys: Understand primary keys, foreign keys, business keys, and surrogate keys.
-Data types: Correctly identify the data types for each attribute.
-How to create a database and tables in SQL?
-
-Creation syntax: Use CREATE DATABASE database_name; for the database and CREATE TABLE table_name (attributes); for the tables.
-Consistency in names: Maintain a uniform format (uppercase or lowercase) for table and attribute names.
-What to consider when defining table attributes?
-
-Primary key: Choose a unique key, such as an auto-incremental ID.
-Business attributes: Use business keys for external identification.
-Data types: Select appropriate types, such as INTEGER for IDs and VARCHAR for text.
-Why is it important to record dates in tables?
-
-Traceability: Include date_loaded and date_modified to monitor changes and support data-driven decisions.
-Compliance: Ensure data is up-to-date and documented.
-How to relate tables using foreign keys?
-
-Foreign key: Define the relationship between tables using FOREIGN KEY pointing to the primary key of another table.
-Example: Relate students and courses with an intermediate table containing the foreign keys student_id and course_id.
-By following these practices, you will achieve efficient, well-structured, and easy-to-maintain databases.
-
-<br>
-<br>
-
-  ##  [PRACTICE: YOUR FIRST QUERY]()
+  ### How to create a database and tables in SQL?
+  - **Creation syntax**: Use ``CREATE DATABASE database_name;`` for the database and ``CREATE TABLE table_name (attributes);`` for the tables.
+  - **Consistency in names**: Maintain a uniform format (uppercase or lowercase) for table and attribute names.
+  
+  ### What to consider when defining table attributes?
+  - **Primary key**: Choose a unique key, such as an auto-incremental ID.
+  - **Business attributes**: Use business keys for external identification.
+  - **Data types**: Select appropriate types, such as ``INTEGER`` for ``IDs`` and ``VARCHAR`` for text.
+  
+  ### Why is it important to record dates in tables?
+  - **Traceability**: Include ``date_loaded`` and ``date_modified`` to monitor changes and support data-driven decisions.
+  - **Compliance**: Ensure data is up-to-date and documented.
+  
+  ### How to relate tables using foreign keys?
+  - **Foreign key**: Define the relationship between tables using ``FOREIGN KEY`` pointing to the primary key of another table.
+  - **Example**: ``FOREIGN KEY (COURSEID) REFERENCES COURSES(COURSEID)``, In this case we are creating another atribute called ``COURSEID`` that makes reference to a another table atribute ``REFERENCES COURSES(COURSEID)``
 
 <br>
 <br>
 
   ##  [SQL HISTORY AND EVOLUTION]()
+SQL, which stands for "Structured Query Language," is a programming language used to manage and manipulate relational databases. It is the de facto standard for interacting with database management systems (DBMS) such as MySQL, PostgreSQL, Oracle, and SQL Server. Since its inception, SQL has been fundamental in developing applications requiring efficient data storage and retrieval.
+
+  ### Origins of SQL
+  #### The Beginning at IBM
+The story of SQL begins in the 1970s at IBM laboratories. Edgar F. Codd, a British computer scientist, proposed the relational model for databases in his 1970 paper titled "A Relational Model of Data for Large Shared Data Banks." This model revolutionized the way data could be organized and accessed.
+
+  #### System R: The Pioneering Project
+In 1974, the System R project was initiated by IBM in San Jose, California, with the goal of creating a prototype relational database system based on Codd's ideas. Two researchers, Donald D. Chamberlin and Raymond F. Boyce, developed the SEQUEL (Structured English Query Language) to interact with System R. SEQUEL, later renamed SQL due to trademark issues, was designed to be an intuitive and easy-to-use query language.
+
+  ### Evolution and Standardization
+  #### Commercialization and Adoption
+IBM was not the only one to recognize SQL's potential. In 1979, Oracle (then Relational Software, Inc.) released its commercial database product, Oracle V2, which implemented SQL. This was the first commercial DBMS to use SQL, marking the beginning of rapid industry adoption.
+
+  #### ANSI and ISO Standards
+In 1986, SQL was adopted as a standard by the American National Standards Institute (ANSI), and a year later by the International Organization for Standardization (ISO). This standardization was crucial to ensuring interoperability between different database systems and facilitated the widespread adoption of SQL in various applications.
+
+  #### Versions and Updates
+Over the years, SQL has seen numerous revisions and additions, reflecting the changing needs of the information technology industry. Some important versions include:
+
+  - **SQL-86**: The first standard version of SQL.
+  - **SQL-89**: Included corrections and minor improvements to the initial standard.
+  - **SQL-92**: Introduced significant features such as subqueries, outer joins, and additional data types.
+  - **SQL:1999 (SQL3)**: Added support for object-oriented programming, triggers, and stored procedures.
+  - **SQL:2003**: Introduced native XML support and data management improvements.
+  - **SQL:2008**: Added support for temporal data and portability improvements.
+  - **SQL:2011**: Introduced support for parallel data processing.
+  - **SQL:2016**: Incorporated significant improvements in security and JSON management.
+
+  ### Key Features of SQL
+  #### Data Manipulation Language (DML)
+SQL allows basic data manipulation operations through commands such as:
+  - **SELECT**: Retrieve data from a database.
+  - **INSERT**: Insert new data into a table.
+  - **UPDATE**: Modify existing data.
+  - **DELETE**: Delete data from a table.
+
+  #### Data Definition Language (DDL)
+SQL also provides commands to define and modify the database structure:
+
+  - **CREATE TABLE**: Create a new table.
+  - **ALTER TABLE**: Modify an existing table.
+  - **DROP TABLE**: Delete a table.
+
+  #### Access Control and Transactions
+With SQL, users can control data access and ensure transaction integrity through commands such as:
+
+  - **GRANT** and **REVOKE**: Control access permissions.
+  - **BEGIN TRANSACTION**, **COMMIT**, and **ROLLBACK**: Manage transactions to ensure data integrity.
+
+  #### Impact of SQL on the Industry
+SQL has profoundly impacted data management and the software industry. It has facilitated the development of enterprise applications, content management systems, and e-commerce platforms. Its ability to handle large volumes of data and perform complex queries efficiently has made it indispensable in the data world.
+
+From its humble beginnings in IBM laboratories to its current status as a global standard, SQL has come a long way. Its evolution reflects the transformation of database technology and the growing demand for more powerful and flexible data management tools. As technology advances, SQL will likely continue to adapt and maintain its relevance in managing relational data.
 
 <br>
 <br>
 
   ##  [PRACTICE: ``CREATE TABLE``]()
+```
+CREATE TABLE people (  
+    person_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    last_name VARCHAR(255),  
+    first_name VARCHAR(255),  
+    address VARCHAR(255),  
+    city VARCHAR(255)
+  );
+```
 
 <br>
 <br>
@@ -163,6 +216,28 @@ By following these practices, you will achieve efficient, well-structured, and e
 
 # DATA MANIPULATION
   ##  [``INSERT`` DATA]()
+How to Insert Data in SQL
+To insert data, we use ``INSERT INTO``, specifying the table name and attributes. For example, when inserting into the students and courses tables, we don't need to include default values such as load and update dates. Here is a practical example:
+```
+INSERT INTO students (first_name, last_name, email)
+VALUES ('Carolina', 'Pérez', 'carolina@example.com');
+```
+
+  ### How to Insert Data into Tables with Foreign Keys
+When working with foreign keys, we first identify the relevant IDs. Suppose we want to enroll Carolina in the French course. Carolina has the ID 1, and the French course is course 1. The insert would be:
+```
+INSERT INTO student_course_relation (student_id, course_id)
+VALUES (1, 1);
+```
+
+  ### How to Validate the Inserted Data
+To validate that the data has been inserted correctly, we use ``SELECT * FROM`` followed by the table name. This way, we can verify that the records are in place.
+```
+SELECT * FROM students;
+```
+```
+SELECT * FROM student_course_relation;
+```
 
 <br>
 <br>
